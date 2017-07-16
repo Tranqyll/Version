@@ -88,14 +88,14 @@ public:
             return false;
 
         // Get MAJOR and MINOR numbers
-        const int firstDotId = version.find_first_of('.');
+        const std::string::size_type firstDotId = version.find_first_of('.');
         const int major = std::stoi(version.substr(0, firstDotId));
-        const int secondDotId = version.find_first_of('.', firstDotId+1);
+        const std::string::size_type secondDotId = version.find_first_of('.', firstDotId+1);
         const int minor = std::stoi(version.substr(firstDotId+1, secondDotId-firstDotId-1));
 
         // After the PATCH number, there can be a '-' (for prerelase) or a '+' (for metadata) or nothing
-        const int hyphenId = version.find_first_of('-');
-        const int plusId = version.find_first_of('+');
+        const std::string::size_type hyphenId = version.find_first_of('-');
+        const std::string::size_type plusId = version.find_first_of('+');
 
         int patch = 0;
         std::string prerelease;
@@ -310,8 +310,8 @@ inline bool operator<(const Version& v1, const Version& v2)
                     // Both prerelease strings are not empty
                     std::vector<std::string> pr1 = v1.prereleaseIdentifiers();
                     std::vector<std::string> pr2 = v2.prereleaseIdentifiers();
-                    const int maxI = std::min(pr1.size(), pr2.size());
-                    for(int i=0; i < maxI; ++i)
+                    const size_t maxI = std::min(pr1.size(), pr2.size());
+                    for(size_t i=0; i < maxI; ++i)
                     {
                         // Checks if the prerelease is only digits
                         const bool allDigit1 = std::all_of(pr1[i].begin(), pr1[i].end(), ::isdigit);
