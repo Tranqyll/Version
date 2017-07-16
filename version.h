@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Fabien
+ * Copyright (c) 2017 Fabien Caylus
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
+ */
+
+/*
+ * Sementic versionning 2.0.0 implementation in C++11
+ * Project hosted at: https://github.com/Tranqyll/Version
  */
 
 #ifndef VERSION_H
