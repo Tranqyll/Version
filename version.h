@@ -140,13 +140,13 @@ public:
 
     /**
      * @brief Check if this version is compatible with 'other'.
-     * Compatible means the MAJOR numbers are equals and the minor version is higher (or equal) the the 'other' minor version.
-     * @param version
+     * Compatible means the MAJOR numbers are equals and the minor version is higher (or equal) than the 'minVersion' minor version.
+     * @param minVersion
      * @return true if versions are compatible
      */
-    bool compatible(const Version& other)
+    bool compatible(const Version& minVersion)
     {
-        return _major == other.major() && _minor >= other.minor();
+        return _major == minVersion.major() && _minor >= minVersion.minor();
     }
     /**
      * @brief Overloaded function.
